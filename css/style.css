@@ -1,21 +1,78 @@
+/* Estilo geral da página */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: #121212; /* Fundo escuro moderno */
+    color: #ffffff; /* Texto branco para contraste */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
+/* Estilo do canvas do jogo */
 #gameCanvas {
-    border: 1px solid #000;
-    background-color: #222;
+    border: 3px solid #ff5722; /* Borda com cor vibrante */
+    background-color: #1c1c1c; /* Fundo escuro para contraste com a cobra */
+    border-radius: 8px; /* Borda arredondada */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para destacar o canvas */
+    margin-bottom: 20px;
 }
 
+/* Estilo da pontuação */
 #score {
-    font-size: 20px;
-    color: white;
+    font-size: 24px; /* Tamanho de fonte maior */
+    font-weight: bold;
+    color: #fdd835; /* Cor vibrante para destaque */
     margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para melhor visibilidade */
 }
 
+/* Estilo dos botões de nível */
 #level button {
-    font-size: 16px;
+    font-size: 18px; /* Tamanho de fonte ajustado */
     margin: 5px;
+    padding: 10px 20px; /* Botões maiores e mais confortáveis */
+    background-color: #4caf50; /* Cor verde vibrante */
+    color: #ffffff; /* Texto branco */
+    border: none;
+    border-radius: 25px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Estilo ao passar o mouse sobre os botões */
+#level button:hover {
+    background-color: #388e3c; /* Cor mais escura ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+/* Estilo ao clicar nos botões */
+#level button:active {
+    background-color: #2e7d32; /* Cor ainda mais escura ao clicar */
+    transform: scale(0.95); /* Redução ao clicar */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    #gameCanvas {
+        width: 90%; /* Ajuste para telas menores */
+        height: auto; /* Manter proporção */
+    }
+
+    #score {
+        font-size: 20px;
+    }
+
+    #level button {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
 }

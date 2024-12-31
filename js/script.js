@@ -1,6 +1,5 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
-const scoreElement = document.getElementById('score');
 const eatSound = new Audio('assets/eat-sound.mp3');
 const gameOverSound = new Audio('assets/game-over.mp3');
 
@@ -30,11 +29,11 @@ function drawFood() {
     ctx.fill();
 }
 
-// Função para exibir a pontuação
+// Função para exibir a pontuação dentro do canvas
 function displayScore() {
     ctx.fillStyle = 'black';
-    ctx.font = '20px Arial';
-    ctx.fillText(`Pontuação: ${score}`, 10, 20);
+    ctx.font = '30px Arial';  // Fonte maior
+    ctx.fillText(`Pontuação: ${score}`, 10, 40);  // Ajuste de posição para ficar dentro da área do canvas
 }
 
 // Função para mover a cobra
@@ -52,7 +51,6 @@ function moveSnake() {
 
     if (head.x === food.x && head.y === food.y) {
         score++;
-        scoreElement.textContent = `Pontuação: ${score}`;
         eatSound.play();
         generateFood();
     } else {
@@ -130,7 +128,6 @@ document.addEventListener('keydown', (e) => {
 function startGame() {
     snake = [{ x: 50, y: 50 }];
     score = 0;
-    scoreElement.textContent = `Pontuação: ${score}`;
     direction = 'RIGHT';
     isGameOver = false;
     generateFood();
